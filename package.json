@@ -1,0 +1,28 @@
+{
+  "name": "js-foundations-code",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "mocha --ui qunit_file_suites --require ./mocha/mocha_exercise_uis.js --require ts-node/register",
+    "testone": "mocha --ui qunit_never_skip --require ./mocha/mocha_exercise_uis.js --require ts-node/register",
+    "testall": "mocha --ui qunit_never_skip --require ./mocha/mocha_exercise_uis.js --require ts-node/register \"{exercises,demos}/**/*{_test,_exrc}.{js,ts,tsx}\"",
+    "ts": "ts-node",
+    "serve": "http-server test_data/",
+    "check": "tsc --noEmit"
+  },
+  "author": "Axel Rauschmayer",
+  "//": [
+    "http-server is needed for fetch_json_test.js and fetch_json_test2.js",
+    "isomorphic-fetch is needed for fetch_json_test.js and fetch_json_test2.js"
+  ],
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "isomorphic-fetch": "^2.2.1",
+    "mocha": "^5.2.0",
+    "ts-node": "^6.1.1",
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "@types/isomorphic-fetch": "0.0.34",
+    "@types/mocha": "^5.2.2"
+  }
+}
