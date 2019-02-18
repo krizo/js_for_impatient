@@ -8,13 +8,13 @@ import { strict as assert } from 'assert';
 
 test('instanceof', () => {
   // @ts-ignore
-  assert.equal('abc' instanceof String, '???');
+  assert.equal('abc' instanceof String, false);
   // @ts-ignore
-  assert.equal(null instanceof Object, '???');
+  assert.equal(null instanceof Object, false);
   // @ts-ignore
-  assert.equal(undefined instanceof Object, '???');
+  assert.equal(undefined instanceof Object, false);
 
-  assert.equal([true, false] instanceof Array, '???');
-  assert.equal([true, false] instanceof Object, '???');
-  assert.equal({} instanceof Object, '???');
+  assert.equal([true, false] instanceof Array, true);
+  assert.equal([true, false] instanceof Object, true);
+  assert.equal({} instanceof Object, true);
 });
