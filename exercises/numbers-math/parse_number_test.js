@@ -4,9 +4,9 @@ Instructions:
 - Ensure the test passes
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
-import {parseNumber} from './parse_number.js';
+import { parseNumber } from './parse_number.js';
 
 test('parseNumber', () => {
   assert.equal(parseNumber('16'), 16);

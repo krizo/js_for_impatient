@@ -1,3 +1,3 @@
 export function removeEmptyLines(lines) {
-    return lines.filter(line => line.length > 0);
+  return lines.filter(line => line.length > 0);
 }

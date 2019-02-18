@@ -3,8 +3,7 @@ export function* iterNestedArrays(value) {
     for (const x of value) {
       yield* iterNestedArrays(x);
     }
-  }
-  else {
+  } else {
     yield value;
   }
 }

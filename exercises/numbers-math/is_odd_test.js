@@ -5,17 +5,17 @@ Instructions:
 - Possibly useful: Math.abs()
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
-import {isOdd} from './is_odd.js';
+import { isOdd } from './is_odd.js';
 
 test('isOdd', () => {
-	assert.equal(isOdd(3), true);
-	assert.equal(isOdd(-3), true);
-	assert.equal(isOdd(10001), true);
+  assert.equal(isOdd(3), true);
+  assert.equal(isOdd(-3), true);
+  assert.equal(isOdd(10001), true);
 
-	assert.equal(isOdd(0), false);
-	assert.equal(isOdd(2), false);
-	assert.equal(isOdd(-2), false);
-	assert.equal(isOdd(10000), false);
+  assert.equal(isOdd(0), false);
+  assert.equal(isOdd(2), false);
+  assert.equal(isOdd(-2), false);
+  assert.equal(isOdd(10000), false);
 });

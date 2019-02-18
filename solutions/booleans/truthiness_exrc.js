@@ -1,4 +1,4 @@
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
 test('instanceof', () => {
   assert.equal(Boolean(null), false);
@@ -8,7 +8,7 @@ test('instanceof', () => {
   assert.equal(Boolean('abc'), true);
   assert.equal(Boolean(0), false);
   assert.equal(Boolean(123), true);
-  
+
   assert.equal(Boolean({}), true);
   assert.equal(Boolean([]), true);
 });

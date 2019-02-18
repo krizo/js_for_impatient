@@ -3,9 +3,8 @@ export function callFunction(func) {
     const result = func();
     return {
       success: result,
-    };      
-  }
-  catch (err) {
+    };
+  } catch (err) {
     return {
       failure: err,
     };

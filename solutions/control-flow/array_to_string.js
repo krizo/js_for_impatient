@@ -4,7 +4,7 @@ export function arrayToString(arr) {
     if (index > 0) {
       result += '\n';
     }
-    result += (index+1) + '. ' + elem;
+    result += `${index + 1}. ${elem}`;
   }
   return result;
 }

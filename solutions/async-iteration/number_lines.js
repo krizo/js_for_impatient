@@ -5,7 +5,7 @@
 export async function* numberLines(linesAsync) {
   let counter = 1;
   for await (const line of linesAsync) {
-    yield counter + ': ' + line;
+    yield `${counter}: ${line}`;
     counter++;
   }
 }

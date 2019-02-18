@@ -5,15 +5,18 @@ Instructions:
 – Syntax for creating the object SPECIAL_OBJECT: check the material on symbols
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
 import { SPECIAL_OBJECT } from './to_string_tag.js';
 
 test('Symbol.toStringTag', () => {
   assert.equal(String({}), '[object Object]'); // default
-  
+
   // Instance property [Symbol.toStringTag] must be changed
-  assert.notEqual(SPECIAL_OBJECT[Symbol.toStringTag], Object.prototype[Symbol.toStringTag]);
+  assert.notEqual(
+    SPECIAL_OBJECT[Symbol.toStringTag],
+    Object.prototype[Symbol.toStringTag]
+  );
   // Method .toString() must not be changed
   assert.equal(SPECIAL_OBJECT.toString, {}.toString);
 

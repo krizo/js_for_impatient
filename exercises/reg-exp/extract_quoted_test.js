@@ -4,12 +4,16 @@ Instructions:
 – Use RegExp.prototype.exec()
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
-import {extractQuoted} from './extract_quoted.js';
+import { extractQuoted } from './extract_quoted.js';
 
 test('extractQuoted()', () => {
-  assert.deepEqual(extractQuoted('"foo" and "bar" and "baz"'), ['foo', 'bar', 'baz']);
+  assert.deepEqual(extractQuoted('"foo" and "bar" and "baz"'), [
+    'foo',
+    'bar',
+    'baz',
+  ]);
   assert.deepEqual(extractQuoted('nothing is quoted'), []);
   assert.deepEqual(extractQuoted(''), []);
   assert.deepEqual(extractQuoted('empty: ""'), ['']);

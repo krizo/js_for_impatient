@@ -1,5 +1,5 @@
-import {resolve} from 'path';
-import {readdirSync, statSync} from 'fs';
+import { resolve } from 'path';
+import { readdirSync, statSync } from 'fs';
 
 export function listFilesSync(filePath) {
   const stats = statSync(filePath);
@@ -12,9 +12,8 @@ export function listFilesSync(filePath) {
       return listFilesSync(childPath);
     });
     return flatten(subTrees);
-  } else {
-    return [filePath];
   }
+  return [filePath];
 }
 
 function flatten(arr) {

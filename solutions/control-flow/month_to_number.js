@@ -25,6 +25,6 @@ export function monthToNumber(num) {
     case 12:
       return 'December';
     default:
-      throw new Error('Unknown number: ' + num);
+      throw new Error(`Unknown number: ${num}`);
   }
 }

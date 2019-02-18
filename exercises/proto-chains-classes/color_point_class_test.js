@@ -4,10 +4,10 @@ Instructions:
 - Ensure the test passes
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
-import {Point} from './point_class.js';
-import {ColorPoint} from './color_point_class.js';
+import { Point } from './point_class.js';
+import { ColorPoint } from './color_point_class.js';
 
 test('Class ColorPoint', () => {
   const cpt = new ColorPoint(4, 7, 'red');

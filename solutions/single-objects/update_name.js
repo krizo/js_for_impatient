@@ -1,3 +1,3 @@
 export function updateName(obj, name) {
-  return {...obj, name};
+  return { ...obj, name };
 }

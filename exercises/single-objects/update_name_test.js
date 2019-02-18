@@ -4,9 +4,9 @@ Instructions:
 - Use spreading.
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
-import {updateName} from './update_name.js';
+import { updateName } from './update_name.js';
 
 test('updateName: update existing property', () => {
   const input = { name: 'John', age: 54 };

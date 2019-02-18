@@ -10,17 +10,15 @@ Instructions:
 - Download a string and parse it yourself, via JSON.parse(str)
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
-import {fetchJson} from './fetch_json.js';
+import { fetchJson } from './fetch_json.js';
 
 // Test callback returns a Promise! This enables async testing.
 test('URL to JSON object', () =>
-  fetchJson('http://localhost:8080/bond.json')
-  .then(json => {
+  fetchJson('http://localhost:8080/bond.json').then(json => {
     assert.deepEqual(json, {
       first: 'Jane',
       last: 'Bond',
     });
-  })
-);
+  }));

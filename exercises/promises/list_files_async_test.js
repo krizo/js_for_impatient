@@ -5,11 +5,11 @@ Instructions:
 – Use util.promisify() to convert fs.stat() and fs.readdir() to Promise-based functions
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 import * as path from 'path';
 
-import {listFilesSync} from './list_files_sync.js';
-import {listFilesAsync} from './list_files_async.js';
+import { listFilesSync } from './list_files_sync.js';
+import { listFilesAsync } from './list_files_async.js';
 
 const TEST_DIR = path.resolve(__dirname, 'list_files_async_test_dir');
 const TEST_DIR_FILES = [
@@ -22,9 +22,7 @@ test('sync', () => {
   const files = listFilesSync(TEST_DIR);
   assert.deepEqual(files, TEST_DIR_FILES);
 });
-test('async', () => {
-  return listFilesAsync(TEST_DIR)
-  .then(files => {
+test('async', () =>
+  listFilesAsync(TEST_DIR).then(files => {
     assert.deepEqual(files, TEST_DIR_FILES);
-  });
-});
+  }));

@@ -5,9 +5,9 @@ Instructions:
 – Same as update_name.js, but with arbitrary keys
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
-import {updateProperty} from './update_property.js';
+import { updateProperty } from './update_property.js';
 
 test('updateProperty: update existing property', () => {
   const input = { name: 'Jane', age: 54 };

@@ -14,7 +14,7 @@ test('instanceof', () => {
   assert.equal(Boolean('abc'), 'some value');
   assert.equal(Boolean(0), 'some value');
   assert.equal(Boolean(123), 'some value');
-  
+
   assert.equal(Boolean({}), 'some value');
   assert.equal(Boolean([]), 'some value');
 });

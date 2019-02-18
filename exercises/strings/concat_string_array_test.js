@@ -5,9 +5,9 @@ Instructions:
 – Use function logStringArray() from this file as a template.
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
-import {concatStringArray} from './concat_string_array.js';
+import { concatStringArray } from './concat_string_array.js';
 
 test('concatStringArray', () => {
   assert.equal(concatStringArray([]), '');

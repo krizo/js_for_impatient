@@ -1,3 +1,3 @@
 export default function func() {
-    return 'hello';
+  return 'hello';
 }

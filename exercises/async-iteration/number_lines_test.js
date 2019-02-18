@@ -4,22 +4,20 @@ Instructions:
 – Use an async generator to do so.
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 import { Readable } from 'stream';
 import { numberLines } from './number_lines.js';
 
 test('numberLines', async () => {
   const asyncIterable = numberLines(generateLines());
-  assert.deepEqual(
-    await asyncIterableToArray(asyncIterable),
-    [
-      '1: first',
-      '2: second',
-    ]);
+  assert.deepEqual(await asyncIterableToArray(asyncIterable), [
+    '1: first',
+    '2: second',
+  ]);
 });
 
 async function asyncIterableToArray(asyncIterable) {
-  let result = [];
+  const result = [];
   for await (const value of asyncIterable) {
     result.push(value);
   }

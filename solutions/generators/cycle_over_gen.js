@@ -3,6 +3,6 @@ export function* cycleOver(...vs) {
   let i = 0;
   while (true) {
     yield vs[i];
-    i = (i+1) % vs.length;
+    i = (i + 1) % vs.length;
   }
 }

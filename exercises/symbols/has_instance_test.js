@@ -5,7 +5,7 @@ Instructions:
 – Syntax for creating the class PrimitiveString: check the material on symbols
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
 import { PrimitiveString } from './has_instance.js';
 

@@ -4,9 +4,9 @@ Instructions:
 – Use fibSeqArr() as inspiration.
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
-import {fibSeqGen} from './fib_seq.js';
+import { fibSeqGen } from './fib_seq.js';
 
 test('fibSeqArr()', () => {
   assert.deepEqual(fibSeqArr(0), [0]);
@@ -24,13 +24,13 @@ test('fibSeqGen()', () => {
 
 function fibSeqArr(max) {
   const result = [];
-  
+
   let current = 0;
   let next = 1;
   for (let i = 0; i <= max; i++) {
     result.push(current);
     [current, next] = [next, current + next];
   }
-  
+
   return result;
 }

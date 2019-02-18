@@ -4,13 +4,13 @@ Instructions:
 – In lines A and B, you can see how Node’s callbacks work
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
-import {myPromisify} from './my_promisify.js';
+import { myPromisify } from './my_promisify.js';
 
-test('Fulfillment', (done) => {
+test('Fulfillment', done => {
   const f = (arg, callback) => {
-    callback(null, 'success '+arg); // (A)
+    callback(null, `success ${arg}`); // (A)
   };
   const pf = myPromisify(f);
   pf('good').then(x => {
@@ -19,9 +19,9 @@ test('Fulfillment', (done) => {
   });
 });
 
-test('Rejection', (done) => {
+test('Rejection', done => {
   const f = (arg, callback) => {
-    callback('failure '+arg); // (B)
+    callback(`failure ${arg}`); // (B)
   };
   const pf = myPromisify(f);
   pf('bad').catch(err => {

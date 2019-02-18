@@ -3,7 +3,7 @@ Instructions:
 - Change the code so that it uses destructuring and the tests still pass
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
 const obj = {
   first: 'Jane',
@@ -15,7 +15,7 @@ test('Properties of the object', () => {
   const first = obj.first;
   const last = obj.last;
   // END: use destructuring here
-  
+
   assert.equal(first, 'Jane');
   assert.equal(last, 'Doe');
 });
@@ -30,7 +30,7 @@ test('Properties of a property descriptor', () => {
   const enumerable = desc.enumerable;
   const configurable = desc.configurable;
   // END: use destructuring here
-  
+
   assert.equal(value, 'Jane');
   assert.equal(writable, true);
   assert.equal(enumerable, true);

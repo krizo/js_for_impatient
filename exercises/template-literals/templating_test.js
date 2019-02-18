@@ -4,9 +4,12 @@ Instructions: Implement templating.js
 – You don’t need to escape the template data.
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
-import {arrayWithObjectsToTable, arrayToUnorderedListWithEscaping} from './templating.js'
+import {
+  arrayWithObjectsToTable,
+  arrayToUnorderedListWithEscaping,
+} from './templating.js';
 
 test('arrayWithObjectsToTable', () => {
   const data = [
@@ -14,24 +17,26 @@ test('arrayWithObjectsToTable', () => {
     { first: 'Jane', last: 'Bond' },
   ];
   // Lenient testing via .trim()
-  assert.equal(arrayWithObjectsToTable(data).trim(),
-`<table>
+  assert.equal(
+    arrayWithObjectsToTable(data).trim(),
+    `<table>
   <tr><td>Croft</td><td>Lars</td></tr>
   <tr><td>Bond</td><td>Jane</td></tr>
-</table>`);
+</table>`
+  );
 });
 
-//---------- Bonus (remove .skip to activate)
+// ---------- Bonus (remove .skip to activate)
 
 test.skip('arrayToUnorderedListWithEscaping', () => {
-  const data = [
-    '<first item>',
-    'second item',
-  ];
-  assert.equal(arrayToUnorderedListWithEscaping(data).trim(), `
+  const data = ['<first item>', 'second item'];
+  assert.equal(
+    arrayToUnorderedListWithEscaping(data).trim(),
+    `
 <ul>
   <li>&lt;first item&gt;</li>
   <li>second item</li>
 </ul>
-  `.trim());
+  `.trim()
+  );
 });

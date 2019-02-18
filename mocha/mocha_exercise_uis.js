@@ -1,8 +1,6 @@
-'use strict';
-
-var path = require('path');
-var Mocha = require('mocha');
-var Test = require('mocha/lib/test.js');
+const path = require('path');
+const Mocha = require('mocha');
+const Test = require('mocha/lib/test.js');
 
 /**
  * QUnit-style interface:
@@ -30,17 +28,21 @@ var Test = require('mocha/lib/test.js');
  * @param {Suite} suite Root suite.
  */
 function qUnitInterface(disableSkip, suite) {
-  var suites = [suite];
+  const suites = [suite];
 
   suite.on('pre-require', function(context, file, mocha) {
-    var common = require('mocha/lib/interfaces/common.js')(suites, context, mocha);
+    const common = require('mocha/lib/interfaces/common.js')(
+      suites,
+      context,
+      mocha
+    );
 
     context.before = common.before;
     context.after = common.after;
     context.beforeEach = common.beforeEach;
     context.afterEach = common.afterEach;
     context.run = mocha.options.delay && common.runWithSuite(suite);
-    
+
     /**
      * Describe a "suite" with the given `title`.
      */
@@ -49,10 +51,10 @@ function qUnitInterface(disableSkip, suite) {
         suites.shift();
       }
       return common.suite.create({
-        title: title,
-        file: file,
-        fn: false
-      });      
+        title,
+        file,
+        fn: false,
+      });
     }
     context.suite = suite;
     suite(path.relative(process.cwd(), file)); // @rauschma
@@ -66,9 +68,9 @@ function qUnitInterface(disableSkip, suite) {
         suites.shift();
       }
       return common.suite.only({
-        title: title,
-        file: file,
-        fn: false
+        title,
+        file,
+        fn: false,
       });
     };
 
@@ -78,7 +80,7 @@ function qUnitInterface(disableSkip, suite) {
      * acting as a thunk.
      */
     function theTest(title, fn) {
-      var test = new Test(title, fn);
+      const test = new Test(title, fn);
       test.file = file;
       suites[0].addTest(test);
       return test;
@@ -93,7 +95,8 @@ function qUnitInterface(disableSkip, suite) {
       return common.test.only(mocha, context.test(title, fn));
     };
 
-    if (disableSkip) { // @rauschma
+    if (disableSkip) {
+      // @rauschma
       context.test.skip = theTest;
     } else {
       context.test.skip = common.test.skip;
@@ -102,5 +105,5 @@ function qUnitInterface(disableSkip, suite) {
   });
 }
 
-Mocha.interfaces['qunit_never_skip'] = qUnitInterface.bind(undefined, true);
-Mocha.interfaces['qunit_file_suites'] = qUnitInterface.bind(undefined, false);
+Mocha.interfaces.qunit_never_skip = qUnitInterface.bind(undefined, true);
+Mocha.interfaces.qunit_file_suites = qUnitInterface.bind(undefined, false);

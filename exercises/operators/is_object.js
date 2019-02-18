@@ -7,6 +7,6 @@ export function isObject(x) {
   // typeof x !== 'object'
   // x === 3 || x === 4  // logical OR
   // x !== 3 && x !== 4  // logical AND
-  
+
   return true;
 }

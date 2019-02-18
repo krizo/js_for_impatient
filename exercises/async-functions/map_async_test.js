@@ -4,29 +4,25 @@ Instructions:
 – Use the Array methods .map() and .filter()
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
-import {mapAndRemoveEmptyStringsAsync} from './map_async.js';
+import { mapAndRemoveEmptyStringsAsync } from './map_async.js';
 
-//---------- Sync
+// ---------- Sync
 
 test('mapAndRemoveEmptyStringsSync', () => {
-  assert.deepEqual(
-    mapAndRemoveEmptyStringsSync(twiceSync, ['a', '', 'b']),
-    ['aa', 'bb']
-  );
+  assert.deepEqual(mapAndRemoveEmptyStringsSync(twiceSync, ['a', '', 'b']), [
+    'aa',
+    'bb',
+  ]);
   assert.deepEqual(
     mapAndRemoveEmptyStringsSync(twiceSync, ['', 'a', '', 'b', '', 'c', '']),
     ['aa', 'bb', 'cc']
   );
-  assert.deepEqual(
-    mapAndRemoveEmptyStringsSync(twiceSync, []),
-    []
-  );
-  assert.deepEqual(
-    mapAndRemoveEmptyStringsSync(twiceSync, ['abc']),
-    ['abcabc']
-  );
+  assert.deepEqual(mapAndRemoveEmptyStringsSync(twiceSync, []), []);
+  assert.deepEqual(mapAndRemoveEmptyStringsSync(twiceSync, ['abc']), [
+    'abcabc',
+  ]);
 });
 
 function twiceSync(str) {
@@ -37,7 +33,7 @@ function mapAndRemoveEmptyStringsSync(callback, strArr) {
   return strArr.map(callback).filter(str => str.length > 0);
 }
 
-//---------- Async
+// ---------- Async
 
 // Test callback returns a Promise (which async arrow functions always do)! This enables async testing.
 test('mapAndRemoveEmptyStringsAsync', async () => {
@@ -46,25 +42,27 @@ test('mapAndRemoveEmptyStringsAsync', async () => {
     ['aa', 'bb']
   );
   assert.deepEqual(
-    await mapAndRemoveEmptyStringsAsync(twiceAsync, ['', 'a', '', 'b', '', 'c', '']),
+    await mapAndRemoveEmptyStringsAsync(twiceAsync, [
+      '',
+      'a',
+      '',
+      'b',
+      '',
+      'c',
+      '',
+    ]),
     ['aa', 'bb', 'cc']
   );
-  assert.deepEqual(
-    await mapAndRemoveEmptyStringsAsync(twiceAsync, []),
-    []
-  );
-  assert.deepEqual(
-    await mapAndRemoveEmptyStringsAsync(twiceAsync, ['abc']),
-    ['abcabc']
-  );
+  assert.deepEqual(await mapAndRemoveEmptyStringsAsync(twiceAsync, []), []);
+  assert.deepEqual(await mapAndRemoveEmptyStringsAsync(twiceAsync, ['abc']), [
+    'abcabc',
+  ]);
 });
 
 function twiceAsync(str) {
   return new Promise((resolve, reject) => {
-    setTimeout(
-      () => {
-        resolve(str + str);
-      },
-      100);
+    setTimeout(() => {
+      resolve(str + str);
+    }, 100);
   });
 }

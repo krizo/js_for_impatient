@@ -4,7 +4,7 @@ Instructions:
 - Change the second parameter of each assert.equal() so that the test succeeds
 */
 
-import {strict as assert} from 'assert';
+import { strict as assert } from 'assert';
 
 test('conversion', () => {
   assert.equal(Boolean(5), '???');

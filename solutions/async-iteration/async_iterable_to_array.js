@@ -1,5 +1,5 @@
 export async function asyncIterableToArray(asyncIterable) {
-  let result = [];
+  const result = [];
   for await (const value of asyncIterable) {
     result.push(value);
   }
